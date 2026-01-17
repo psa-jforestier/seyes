@@ -116,5 +116,9 @@
     "Français": "French",
     "Anglais": "English",
     "Italien": "Italian",
-    "Occitan": "Occitan"
+    "Occitan": "Occitan",
+    "cloud_warning": "⚠ Warning: anyone who knows this identifier can access your document, read or modify it. Do not put personal or confidential information.",
+    "cloud_save_message": "Do you want to save your document in the cloud?",
+    "cloud_save_identifier_label": "If you know your Unique Document Identifier (UDI), enter it here:",
+    "cloud_save_instruction": "Otherwise, a unique identifier will be generated for you when saving."
   }
