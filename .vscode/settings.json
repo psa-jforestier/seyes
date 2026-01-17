@@ -1,0 +1,33 @@
+{
+	"editor.defaultFormatter": "esbenp.prettier-vscode",
+	"[javascript]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode",
+		"editor.formatOnSave": true
+	},
+	"[css]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode",
+		"editor.formatOnSave": true
+	},
+	"liveServer.settings.port": 5505,
+	"liveServer.settings.root": "/web",
+	"editor.semanticTokenColorCustomizations": {
+        "enabled": true,
+        "rules": {
+            "variable": {"underline": true },
+            "variable.local": {"underline": false}, 
+            "variable.defaultLibrary": {"underline": false}, 
+            "property.declaration": {"underline": false}, 
+        }
+    },
+	"eslint.validate": [
+		".mjs",
+		"javascript",
+		"html",
+		"markdown",
+		"json"
+	],
+	"[feature]": {
+		"editor.defaultFormatter": "alexkrechik.cucumberautocomplete",
+		"editor.formatOnSave": true
+	},
+}
