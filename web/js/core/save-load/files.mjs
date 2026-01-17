@@ -35,7 +35,7 @@ async function handleFileSelect(event) {
 	if (!validExtensions.some((ext) => file.name.endsWith(ext))) {
 		alert(
 			"Erreur : fichier non valide. Extensions acceptées : " +
-				validExtensions.join(", ")
+				validExtensions.join(", "),
 		);
 		return;
 	}
@@ -124,7 +124,46 @@ export async function prepareEnregistrement() {
 	}
 }
 
+/* On a vraiment besoin d'une 3e fonction pour récupérer le contenu à sauvegarder ?
+ * On pourrait factoriser avec enregistrer et enregistrerFichierAvecDialogue
+ */
+export function getContentForSaving(prefixeAppli) {
+	let data = {};
+
+	// Parcourir toutes les clés dans le localStorage
+	for (let i = 0; i < localStorage.length; i++) {
+		const key = localStorage.key(i);
+
+		// Vérifie si la clé commence par le préfixe spécifié
+		if (key.startsWith(prefixeAppli + "-")) {
+			// Récupère la valeur de la clé
+			const value = localStorage.getItem(key);
+
+			// Si la clé contient "texte-principal", on ne la transforme pas en JSON (on conserve la chaîne telle quelle)
+			if (key === "seyes-texte-principal") {
+				data[key] = value;
+			} else {
+				try {
+					// Essaie de parser la valeur comme JSON
+					data[key] = JSON.parse(value);
+				} catch (e) {
+					// Si ce n'est pas du JSON, conserve la valeur sous forme de chaîne
+					// console.error(e);
+					console.log(
+						`Key ${key} with value ${value} is not JSON, saving as string.`,
+					);
+					data[key] = value;
+				}
+			}
+		}
+	}
+
+	return data;
+}
+
 function enregistrer(nomDeFichier) {
+	const data = getContentForSaving(config.prefixeAppli);
+	/*
 	const data = {};
 
 	// Parcourir toutes les clés dans le localStorage
@@ -151,7 +190,7 @@ function enregistrer(nomDeFichier) {
 			}
 		}
 	}
-
+	*/
 	// Convertit les données en JSON
 	const jsonData = JSON.stringify(data, null, 2);
 
@@ -167,7 +206,7 @@ function enregistrer(nomDeFichier) {
 
 async function enregistrerFichierAvecDialogue(
 	nomParDefaut,
-	prefixeAppli = "seyes"
+	prefixeAppli = "seyes",
 ) {
 	const data = {};
 
