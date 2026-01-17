@@ -1,0 +1,6 @@
+node_modules/
+.env
+.task
+tests/e2e/output
+megalinter-reports/
+.mega-linter.yml
