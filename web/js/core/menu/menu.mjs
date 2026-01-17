@@ -41,6 +41,7 @@ import { handleNoButton, handleYesButton } from "./buttons/yes-no-buttons.mjs";
 import { handleCloseButtons } from "./buttons/close-buttons.mjs";
 import { openAbout } from "./buttons/about.mjs";
 import { handleColorButtons } from "./buttons/color-buttons.mjs";
+import { initCloudSaveHandlers } from "./buttons/cloud-save.mjs";
 
 export function initMenu() {
 	// Gestion des clics sur les boutons du menu
@@ -147,4 +148,5 @@ export function initMenu() {
 
 	handleCloseButtons();
 	handleColorButtons();
+	initCloudSaveHandlers();
 }
