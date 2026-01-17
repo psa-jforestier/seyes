@@ -98,7 +98,35 @@
               i18_content="ferme_menu_copie_lien_content" i18_title="ferme_menu_copie_lien_title">Fermer</button>
           </div>
         </div>
+      </span>
 
+      <span class="section">
+        <button type="button" id="cloud_save" title="Save to the cloud" i18_title="cloud_save_title"></button>
+        <div id="confirmation_save" class="lightbox hide">
+          <div class="contenu-lightbox">
+            <p i18_content="cloud_save_message">Voulez-vous sauvegarder votre document dans le cloud ?</p>
+            <p i18_content="cloud_save_identifier_label">
+              Si vous connaissez votre Identifiant Unique de Document (UDI), indiquez le ici :
+            </p>
+            <p>
+              <input type="text" id="inputCloudSaveId" placeholder="123-ABC-DEF-456">
+            </p>
+            <p>
+              <span i18_content="cloud_save_instruction">
+                Sinon, un identifiant unique sera généré pour vous lors de la sauvegarde.
+              </span>
+              <br/><hr/>
+              <span i18_content="cloud_warning">
+                ⚠ Attention, n'importe qui connaissant cet identifiant 
+                pourra lire ou modifier ce document.
+                <br/>Ne mettez pas d'informations personelles ou confidentielles.</span>
+            </p>
+            <p>
+              <button type="button" id="okCloudSave" style="font-size: 20px;" title="OK" i18_title="ok_title">OK</button>
+              <button type="button" id="cancelCloudSave" style="font-size: 20px;" title="Cancel" i18_title="cancel_title">Cancel</button>
+            </p>
+          </div>
+        </div>
       </span>
 
       <span class="multibouton gestion-texte">

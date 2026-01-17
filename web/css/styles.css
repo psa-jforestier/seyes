@@ -408,7 +408,7 @@ body.primtux #barre {
 }
 
 #barre button:not(#carreaux):not(#fullscreen),
-#barre input:not(#inputNombreDeCarreaux):not(#inputCodi),
+#barre input:not(#inputNombreDeCarreaux):not(#inputCodi):not(#inputCloudSaveId),
 #zone_couleur,
 #barre label,
 #opacite {
@@ -426,6 +426,7 @@ body.primtux #barre {
 
 #confirmation-nouveau button,
 #zone_menu_copie_lien button,
+#confirmation_save button,
 #divCodi button {
 	width: auto !important;
 	margin-top: 15px !important;
@@ -670,6 +671,10 @@ input[type="file"] {
 	background-image: url(../images/copielien.svg);
 }
 
+#cloud_save {
+	background-image: url(../images/cloud_save.svg);
+}
+
 #timer {
 	background-image: url(../images/timer.svg);
 }
@@ -850,13 +855,17 @@ input[type="file"] {
 }
 
 .trace {
-	cursor: url(../images/crayon.png) 0 30, auto;
+	cursor:
+		url(../images/crayon.png) 0 30,
+		auto;
 }
 
 .trait {
 	border-radius: 3px;
 	user-select: none;
-	transition: width 0.2s linear, height 0.2s linear;
+	transition:
+		width 0.2s linear,
+		height 0.2s linear;
 }
 
 .trait:hover {
@@ -945,7 +954,10 @@ input[type="file"] {
 	z-index: 1;
 	font-feature-settings: var(--ligatures);
 	-webkit-font-feature-settings: var(--ligatures);
-	transition: font-size 0.3s ease, line-height 0.3s ease, margin-top 0.3s ease;
+	transition:
+		font-size 0.3s ease,
+		line-height 0.3s ease,
+		margin-top 0.3s ease;
 }
 
 .texte span {
@@ -1135,6 +1147,7 @@ input[type="file"] {
 }
 
 #zone_menu_copie_lien .contenu-lightbox,
+#confirmation_save .contenu-lightbox,
 #confirmation-nouveau .contenu-lightbox {
 	text-align: center !important;
 }
@@ -1315,6 +1328,7 @@ input[type="file"] {
 	padding-top: 20px !important;
 }
 
+#inputCloudSaveId,
 #inputCodi {
 	width: calc(100% - 10px);
 	box-sizing: border-box;
@@ -1325,6 +1339,12 @@ input[type="file"] {
 	margin-bottom: 10px;
 	margin-left: 2px;
 	background-color: #ffffff;
+}
+#inputCloudSaveId {
+	width: 220px;
+	height: 2em;
+	font-family: monospace;
+	font-size: 1.5em;
 }
 
 #resultatCodi {
