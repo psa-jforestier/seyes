@@ -16,7 +16,7 @@ export async function loadSettings() {
 	// Message d'accueil
 	let valeur = await litDepuisStockage(
 		`afficher-message${config.numeroMessage}`,
-		(v) => v
+		(v) => v,
 	);
 	// Convertir la valeur stockée en booléen
 	if (valeur === "true") {
@@ -37,7 +37,7 @@ export async function loadSettings() {
 
 	config.couleursJours = await getValueFromUrlOrStorage(
 		urlParams,
-		"couleurs-jours"
+		"couleurs-jours",
 	);
 
 	config.police_active =
@@ -50,7 +50,7 @@ export async function loadSettings() {
 
 	config.largeur_marge_secondaire =
 		(await parseFloat(
-			getValueFromUrlOrStorage(urlParams, "largeur-marge-secondaire")
+			getValueFromUrlOrStorage(urlParams, "largeur-marge-secondaire"),
 		)) || config.largeur_marge_secondaire;
 
 	config.contenuGraphismes =
@@ -126,4 +126,8 @@ export async function loadSettings() {
 	config.majDateAuto =
 		(await getValueFromUrlOrStorage(urlParams, "maj-date-auto")) === "true" ||
 		config.majDateAuto;
+
+	config.sharedURL =
+		(await getValueFromUrlOrStorage(urlParams, "shared-url")) ||
+		config.sharedURL;
 }
