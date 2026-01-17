@@ -88,6 +88,9 @@ let couleursJours = {};
 
 let numeroMessage = 8;
 
+let sharedURL =
+	"https://www.forestier.xyz/ggpp/php/ggpp.php?client_id=educajou"; // __TODO__: mettre la bonne URL
+
 export let config = {
 	prefixeAppli,
 	largeur_carreau,
@@ -135,4 +138,5 @@ export let config = {
 	contenuTextePrincipal,
 	couleursJours,
 	numeroMessage,
+	sharedURL,
 };
