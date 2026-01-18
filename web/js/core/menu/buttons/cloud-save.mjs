@@ -36,11 +36,12 @@ function saveContentToCloud(udi) {
 	let newUdi;
 	console.log(`Saving document to cloud with UDI: ${udi}`);
 	const content = getContentForSaving(config.prefixeAppli);
+	const jsonData = JSON.stringify(content, null, 2);
 	console.log("Document content:", content);
 	if (!udi || udi.length === 0) {
-		newUdi = saveNewDocumentToCloud(content);
+		newUdi = saveNewDocumentToCloud(jsonData);
 	} else {
-		newUdi = updateDocumentInCloud(udi, content);
+		newUdi = updateDocumentInCloud(udi, jsonData);
 	}
 	return newUdi;
 }
