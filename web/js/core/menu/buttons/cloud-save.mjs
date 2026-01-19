@@ -1,11 +1,13 @@
 import { ouvre, ferme, get } from "../../utils/dom.mjs";
 import { getContentForSaving } from "../../save-load/files.mjs";
 import { config } from "../../config.mjs";
+import { stocke } from "../../settings/read-write.mjs";
 
 export function openCloudSaveDialog() {
 	get("okCloudSave").disabled = false;
 	get("cloud_status_ok").textContent = "";
 	get("cloud_status_ko").textContent = "";
+	get("inputCloudSaveId").value = config.sharedUDI || ""; // ou litDepuisStockage ?
 	ferme(get("confirmation_save"));
 	ouvre(get("confirmation_save"));
 }
@@ -45,8 +47,9 @@ export function initCloudSaveHandlers() {
 
 function saveContentToCloud(udi) {
 	let newUdi;
+	udi = udi.toUpperCase();
 	console.log(`Saving document to cloud with UDI: ${udi}`);
-	get("cloud_status_ok").textContent = "Veuillez patienter...";
+	get("cloud_status_ok").textContent = "...⌛...";
 	get("cloud_status_ko").textContent = "";
 	get("okCloudSave").disabled = true;
 	const cloud_save_option = get("cloud_save_new").checked ? "new" : "update";
@@ -74,6 +77,8 @@ function documentUpdatedInCloud(udi) {
 	get("inputCloudSaveNewId").value = udi;
 	get("inputCloudSaveNewId").focus();
 	get("inputCloudSaveNewId").select();
+	stocke("shared-udi", udi);
+	config.sharedUDI = udi;
 }
 
 function updateDocumentInCloud(udi, content) {
@@ -105,7 +110,8 @@ function updateDocumentInCloud(udi, content) {
 				return udi;
 			} else {
 				console.log("UDI not returned?");
-				get("cloud_status_ko").textContent = "Echec de la sauvegarde.";
+				get("cloud_status_ko").textContent =
+					"Echec de la sauvegarde, UDI non retourné.";
 				return false;
 			}
 		})
@@ -148,7 +154,8 @@ function saveNewDocumentToCloud(content) {
 				return udi;
 			} else {
 				console.log("UDI not returned?");
-				get("cloud_status_ko").textContent = "Echec de la sauvegarde.";
+				get("cloud_status_ko").textContent =
+					"Echec de la sauvegarde, UDI non retourné.";
 				return false;
 			}
 		})

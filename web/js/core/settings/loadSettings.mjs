@@ -130,4 +130,8 @@ export async function loadSettings() {
 	config.sharedURL =
 		(await getValueFromUrlOrStorage(urlParams, "shared-url")) ||
 		config.sharedURL;
+
+	config.sharedUDI =
+		(await getValueFromUrlOrStorage(urlParams, "shared-udi")) ||
+		config.sharedUDI;
 }

@@ -89,7 +89,8 @@ let couleursJours = {};
 let numeroMessage = 8;
 
 let sharedURL =
-	"https://www.forestier.xyz/ggpp/php/ggpp.php?client_id=educajou"; // __TODO__: mettre la bonne URL
+	"https://www.forestier.xyz/ggpp/php/ggpp.php?client_id=educajou"; // __JFO TODO__: mettre la bonne URL
+let sharedUDI = "";
 
 export let config = {
 	prefixeAppli,
@@ -139,4 +140,5 @@ export let config = {
 	couleursJours,
 	numeroMessage,
 	sharedURL,
+	sharedUDI,
 };
