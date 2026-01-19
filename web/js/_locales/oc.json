@@ -136,9 +136,14 @@
     "Anglais": "Anglés",
     "Italien": "Italian",
     "Occitan": "Occitan",
+    "cloud_save_title": "Enregistrar dins lo cloud",
     "cloud_warning": "⚠ Atencion, qual que siá que coneis aqueste identificador poirà legir o modificar aqueste document. Metètz pas d'informacions personalas o confidencialas.",
     "cloud_save_message": "Volètz salvar vòstre document dins lo cloud ?",
+    "cloud_save_new_option": "Crear un document novèl. Un identificador unic serà generat.",
+    "cloud_save_existing_option": "Remplaçar un document existent en utilizant l'identificador : ",
     "cloud_save_identifier_label": "Se coneissètz vòstre Identificador Unic del Document (UDI), indicatz-lo aquí :",
-    "cloud_save_instruction": "Autrament, un identificant unic serà generat per vos pendent lo procès de sauvagarda."
+    "cloud_save_instruction": "Autrament, un identificant unic serà generat per vos pendent lo procès de sauvagarda.",
+    "cloud_save_ok": "Vòstre document es estat enregistrat dins lo cloud.",
+    "cloud_save_udi": "Podètz partejar l'identificador seguissent :"
   }
   

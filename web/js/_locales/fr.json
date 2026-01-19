@@ -138,8 +138,11 @@
   "Italien": "Italien",
   "Occitan": "Occitan",
   "__comment":"// \n or <br/> seems not working in translation. Todo : fix loadLanguage",
+  "cloud_save_title": "Enregistrer dans le cloud",
   "cloud_warning": "⚠ Attention, n'importe qui connaissant cet identifiant pourra lire ou modifier ce document.\nNe mettez pas d'informations personelles ou confidentielles.", 
-  "cloud_save_message": "Voulez-vous sauvegarder votre document dans le cloud ?",
+  "cloud_save_message": "Comment voulez-vous enregistrer votre document dans le cloud ?",
+  "cloud_save_new_option": "Créer un nouveau document. Un identifiant unique sera généré.",
+  "cloud_save_existing_option": "Remplacer un document existant en utilisant l'identifiant : ",
   "cloud_save_identifier_label": "Si vous connaissez votre Identifiant Unique de Document (UDI), indiquez le ici :",
   "cloud_save_instruction": "Sinon, un identifiant unique sera généré pour vous lors de la sauvegarde."
 }

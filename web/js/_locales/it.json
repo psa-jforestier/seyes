@@ -154,8 +154,13 @@
   "Anglais": "Inglese",
   "Italien": "Italiano",
   "Occitan": "Occitano",
+  "cloud_save_title": "Salva nel cloud",
   "cloud_warning": "⚠ Attenzione, chiunque conosca questo identificatore potrà accedere al tuo documento, leggerlo o modificarlo. Non inserire informazioni personali o riservate.",
   "cloud_save_message": "Vuoi salvare il tuo documento nel cloud?",
+  "cloud_save_new_option": "Create a new document. A unique identifier will be generated.",
+  "cloud_save_existing_option": "Replace an existing document using the identifier: ",
   "cloud_save_identifier_label": "Se conosci il tuo Identificatore Unico del Documento (UDI), inseriscilo qui:",
-  "cloud_save_instruction": "Altrimenti, un identificatore unico verrà generato per te al momento del salvataggio."
+  "cloud_save_instruction": "Altrimenti, un identificatore unico verrà generato per te al momento del salvataggio.",
+  "cloud_save_ok": "Il tuo documento è stato salvato nel cloud.",
+  "cloud_save_udi": "Puoi condividere il seguente identificatore:"
 }
