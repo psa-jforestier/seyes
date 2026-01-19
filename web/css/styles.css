@@ -408,9 +408,11 @@ body.primtux #barre {
 }
 
 #barre button:not(#carreaux):not(#fullscreen),
-#barre input:not(#inputNombreDeCarreaux):not(#inputCodi):not(#inputCloudSaveId),
+#barre
+	input:not(#inputNombreDeCarreaux):not(#inputCodi):not(#inputCloudSaveId)
+	:not(#inputCloudSaveNewId),
 #zone_couleur,
-#barre label,
+#barre label:not(#cloud_save_new),
 #opacite {
 	display: inline-block;
 	width: 35px;
@@ -427,6 +429,7 @@ body.primtux #barre {
 #confirmation-nouveau button,
 #zone_menu_copie_lien button,
 #confirmation_save button,
+#confirmation_save_success button,
 #divCodi button {
 	width: auto !important;
 	margin-top: 15px !important;
@@ -810,7 +813,9 @@ input[type="file"] {
 
 #divCodi .bouton-fermer,
 #panneauOptions .bouton-fermer,
-#boutons_carreaux .bouton-fermer {
+#boutons_carreaux .bouton-fermer,
+#confirmation_save .bouton-fermer,
+#confirmation_save_success .bouton-fermer {
 	position: absolute;
 	top: 0px;
 	right: 0px;
@@ -1147,8 +1152,8 @@ input[type="file"] {
 }
 
 #zone_menu_copie_lien .contenu-lightbox,
-#confirmation_save .contenu-lightbox,
-#confirmation-nouveau .contenu-lightbox {
+#confirmation-nouveau .contenu-lightbox,
+#confirmation_save_success .contenu-lightbox {
 	text-align: center !important;
 }
 
@@ -1208,7 +1213,7 @@ input[type="file"] {
 }
 
 #darkbox {
-	/* Elle doit prendre toute la largeur et toute la hauteyr  */
+	/* Elle doit prendre toute la largeur et toute la hauteur  */
 	position: fixed;
 	z-index: 999; /* O la place sous la lightbox */
 	width: 100%;
@@ -1329,6 +1334,7 @@ input[type="file"] {
 }
 
 #inputCloudSaveId,
+#inputCloudSaveNewId,
 #inputCodi {
 	width: calc(100% - 10px);
 	box-sizing: border-box;
@@ -1340,11 +1346,25 @@ input[type="file"] {
 	margin-left: 2px;
 	background-color: #ffffff;
 }
-#inputCloudSaveId {
+#inputCloudSaveId,
+#inputCloudSaveNewId {
 	width: 220px;
-	height: 2em;
+	height: 1.2em;
 	font-family: monospace;
-	font-size: 1.5em;
+	font-size: 1.2em;
+}
+#inputCloudSaveNewId {
+	user-select: all;
+	background-color: rgb(216, 204, 204);
+	text-align: center;
+}
+#cloud_status_ko {
+	color: red;
+}
+#cloud_status_ko h1 {
+	font-size: 1em;
+	white-space: nowrap;
+	display: inline;
 }
 
 #resultatCodi {

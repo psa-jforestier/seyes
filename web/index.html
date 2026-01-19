@@ -103,22 +103,27 @@
         </div>
       </span>
 
-      <span class="section">
-        <button type="button" id="cloud_save" title="Save to the cloud" i18_title="cloud_save_title"></button>
+      <span class="section"> <!-- __JFO -->
+        <button type="button" id="cloud_save" title="Enregistrer dans le cloud" i18_title="cloud_save_title"></button>
         <div id="confirmation_save" class="lightbox hide">
+          <button class="bouton-fermer" title="Fermer" i18_title="bouton_fermer_title"></button>
           <div class="contenu-lightbox">
-            <p i18_content="cloud_save_message">Voulez-vous sauvegarder votre document dans le cloud ?</p>
-            <p i18_content="cloud_save_identifier_label">
-              Si vous connaissez votre Identifiant Unique de Document (UDI), indiquez le ici :
-            </p>
+            <p i18_content="cloud_save_message">
+              Comment voulez-vous enregistrer votre document dans le cloud ?</p>
+              <p>
+                <p><input type="radio" id="cloud_save_new"      name="cloud_save_option" value="new" checked><label id="cloud_save_new" for="cloud_save_new" i18_content="cloud_save_new_option">
+                  Créer un nouveau document. Un identifiant unique sera généré.</label></p>
+                <p><input type="radio" id="cloud_save_existing" name="cloud_save_option" value="update"><label id="cloud_save_new" for="cloud_save_existing" i18_content="cloud_save_existing_option">
+                    Remplacer un document existant en utilisant l'identifiant : </label>
+                  <input type="text" id="inputCloudSaveId" placeholder="123-ABC-DEF-456">
+                  <br/>
+                </p>
+              </p>
+            </p>            
             <p>
-              <input type="text" id="inputCloudSaveId" placeholder="123-ABC-DEF-456">
-            </p>
-            <p>
-              <span i18_content="cloud_save_instruction">
-                Sinon, un identifiant unique sera généré pour vous lors de la sauvegarde.
-              </span>
-              <br/><hr/>
+              <span id="cloud_status_ok"> </span>
+              <span id="cloud_status_ko"> </span>
+              <hr/>
               <span i18_content="cloud_warning">
                 ⚠ Attention, n'importe qui connaissant cet identifiant 
                 pourra lire ou modifier ce document.
@@ -127,6 +132,18 @@
             <p>
               <button type="button" id="okCloudSave" style="font-size: 20px;" title="OK" i18_title="ok_title">OK</button>
               <button type="button" id="cancelCloudSave" style="font-size: 20px;" title="Cancel" i18_title="cancel_title">Cancel</button>
+            </p>
+          </div>
+        </div>
+        <div id="confirmation_save_success" class="lightbox hide">
+          <button class="bouton-fermer" title="Fermer" i18_title="bouton_fermer_title"></button>
+          <div class="contenu-lightbox">
+            <br/>
+            <p i18_content="cloud_save_ok">Votre document a été enregistré dans le cloud.</p>
+            <p i18_content="cloud_save_udi">Vous pouvez communiquer l'identifiant suivant :</p>
+            <input readonly type="text" id="inputCloudSaveNewId" placeholder="123-ABC-DEF-456">
+            <p>
+              <button type="button" id="okCloudSaveDone" style="font-size: 20px;" title="OK" i18_content="bouton_fermer_title">Fermer</button>
             </p>
           </div>
         </div>
