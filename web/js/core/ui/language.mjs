@@ -4,11 +4,28 @@ import { stocke } from "../settings/read-write.mjs";
 
 let firstLoad = true;
 
+let translations = {};
+export function T(key, defaultText = null) {
+	// This translation function will not work
+	// if the language file has not been loaded yet.
+	// Impossible to load it synchronously for now.
+	if (Object.keys(translations).length == 0) {
+		console.log("Translations not loaded yet!");
+	}
+	if (key == "") return "";
+	if (translations[key]) {
+		return translations[key];
+	} else {
+		console.log(`Missing translation for key: ${key}`);
+		return defaultText || key;
+	}
+}
+
 export async function loadLanguage(lang) {
 	if (lang !== "fr" || !firstLoad) {
 		firstLoad = false;
 		const response = await fetch(`./js/_locales/${lang}.json`);
-		const translations = await response.json();
+		translations = await response.json();
 
 		const elementsTitle = document.querySelectorAll("[i18_title]");
 		elementsTitle.forEach((element) => {

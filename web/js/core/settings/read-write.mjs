@@ -26,12 +26,12 @@ export async function litDepuisStockage(cle) {
 		// Récupération pour Openboard
 		try {
 			valeurAretourner = await window.sankore.async.preference(
-				`${config.prefixeAppli}-${cle}`
+				`${config.prefixeAppli}-${cle}`,
 			);
 		} catch (error) {
 			console.error(
 				`Erreur lors de la lecture de la clé ${cle} depuis Openboard:`,
-				error
+				error,
 			);
 		}
 	} else {

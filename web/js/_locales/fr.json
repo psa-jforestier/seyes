@@ -138,11 +138,19 @@
   "Italien": "Italien",
   "Occitan": "Occitan",
   "__comment":"// \n or <br/> seems not working in translation. Todo : fix loadLanguage",
+  "ok_title": "OK",
+  "annuler_title": "Annuler",
   "cloud_save_title": "Enregistrer dans le cloud",
   "cloud_warning": "⚠ Attention, n'importe qui connaissant cet identifiant pourra lire ou modifier ce document.\nNe mettez pas d'informations personelles ou confidentielles.", 
   "cloud_save_message": "Comment voulez-vous enregistrer votre document dans le cloud ?",
   "cloud_save_new_option": "Créer un nouveau document. Un identifiant unique sera généré.",
   "cloud_save_existing_option": "Remplacer un document existant en utilisant l'identifiant : ",
   "cloud_save_identifier_label": "Si vous connaissez votre Identifiant Unique de Document (UDI), indiquez le ici :",
-  "cloud_save_instruction": "Sinon, un identifiant unique sera généré pour vous lors de la sauvegarde."
+  "cloud_save_instruction": "Sinon, un identifiant unique sera généré pour vous lors de la sauvegarde.",
+  "cloud_save_ok": "Votre document a été enregistré dans le cloud.",
+  "cloud_save_udi": "Vous pouvez partager l'identifiant suivant :",
+  "cloud_save_done": "Document sauvegardé.",
+  "cloud_load_message": "Entrez l'Identifiant Unique de Document (UDI) pour charger un document depuis le cloud :",
+  "cloud_load_bad_udi": "Veuillez entrer un UDI valide."
+  
 }

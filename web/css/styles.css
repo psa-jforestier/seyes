@@ -409,7 +409,9 @@ body.primtux #barre {
 
 #barre button:not(#carreaux):not(#fullscreen),
 #barre
-	input:not(#inputNombreDeCarreaux):not(#inputCodi):not(#inputCloudSaveId)
+	input:not(#inputNombreDeCarreaux):not(#inputCodi):not(#inputCloudSaveId):not(
+		#inputCloudLoadId
+	)
 	:not(#inputCloudSaveNewId),
 #zone_couleur,
 #barre label:not(#cloud_save_new),
@@ -430,6 +432,7 @@ body.primtux #barre {
 #zone_menu_copie_lien button,
 #confirmation_save button,
 #confirmation_save_success button,
+#confirmation_load button,
 #divCodi button {
 	width: auto !important;
 	margin-top: 15px !important;
@@ -678,6 +681,10 @@ input[type="file"] {
 	background-image: url(../images/cloud_save.svg);
 }
 
+#cloud_load {
+	background-image: url(../images/cloud_load.svg);
+}
+
 #timer {
 	background-image: url(../images/timer.svg);
 }
@@ -815,7 +822,8 @@ input[type="file"] {
 #panneauOptions .bouton-fermer,
 #boutons_carreaux .bouton-fermer,
 #confirmation_save .bouton-fermer,
-#confirmation_save_success .bouton-fermer {
+#confirmation_save_success .bouton-fermer,
+#confirmation_load .bouton-fermer {
 	position: absolute;
 	top: 0px;
 	right: 0px;
@@ -1334,6 +1342,7 @@ input[type="file"] {
 }
 
 #inputCloudSaveId,
+#inputCloudLoadId,
 #inputCloudSaveNewId,
 #inputCodi {
 	width: calc(100% - 10px);
@@ -1347,6 +1356,7 @@ input[type="file"] {
 	background-color: #ffffff;
 }
 #inputCloudSaveId,
+#inputCloudLoadId,
 #inputCloudSaveNewId {
 	width: 220px;
 	height: 1.2em;
@@ -1361,7 +1371,8 @@ input[type="file"] {
 #cloud_status_ko {
 	color: red;
 }
-#cloud_status_ko h1 {
+#cloud_status_ko h1,
+#cloud_load_status h1 {
 	font-size: 1em;
 	white-space: nowrap;
 	display: inline;

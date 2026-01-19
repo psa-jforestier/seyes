@@ -82,7 +82,7 @@ async function handleFileSelect(event) {
 }
 
 // Gestion des fichiers JSON ou SEY
-async function handleJSONFile(content) {
+export async function handleJSONFile(content) {
 	try {
 		const data = JSON.parse(content);
 

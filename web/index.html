@@ -104,6 +104,23 @@
       </span>
 
       <span class="section"> <!-- __JFO -->
+        <!-- charger ---->
+        <button type="button" id="cloud_load" title="Charger à partir du cloud" i18_title="cloud_load_title"></button>
+        <div id="confirmation_load" class="lightbox hide">
+          <button class="bouton-fermer" title="Fermer" i18_title="bouton_fermer_title"></button>
+          <div class="contenu-lightbox">
+            <br/>
+            <p i18_content="cloud_load_message">Entrez l'identifiant unique du document (UDI) à charger depuis le cloud :</p>
+            <p>
+              <input type="text" id="inputCloudLoadId" placeholder="123-ABC-DEF-456"> <span id="cloud_load_status"></span>
+            </p>
+            <p>
+              <button type="button" id="okCloudLoad" style="font-size: 20px;" title="OK" i18_title="ok_title">OK</button>
+              <button type="button" id="cancelCloudLoad" style="font-size: 20px;" title="Cancel" i18_title="cancel_title">Annuler</button>
+            </p>
+          </div>
+        </div>
+        <!-- sauvegarder ---->
         <button type="button" id="cloud_save" title="Enregistrer dans le cloud" i18_title="cloud_save_title"></button>
         <div id="confirmation_save" class="lightbox hide">
           <button class="bouton-fermer" title="Fermer" i18_title="bouton_fermer_title"></button>
@@ -131,7 +148,7 @@
             </p>
             <p>
               <button type="button" id="okCloudSave" style="font-size: 20px;" title="OK" i18_title="ok_title">OK</button>
-              <button type="button" id="cancelCloudSave" style="font-size: 20px;" title="Cancel" i18_title="cancel_title">Cancel</button>
+              <button type="button" id="cancelCloudSave" style="font-size: 20px;" title="Cancel" i18_title="cancel_title">Annuler</button>
             </p>
           </div>
         </div>
